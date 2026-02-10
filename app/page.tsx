@@ -179,19 +179,21 @@ const Dashboard = ({ onStartExam }: { onStartExam: (exam: Exam) => void }) => {
   return (
     <div className="flex flex-col h-full overflow-hidden bg-[#faf9f8]">
       {/* Top Action Bar */}
-      <div className="h-16 bg-white border-b border-gray-200 flex items-center justify-between px-8 shrink-0">
-        <h1 className="text-xl font-semibold text-[#323130]">Employee Dashboard</h1>
-        <div className="flex items-center gap-4">
-          <div className="relative">
+      <div className="bg-white border-b border-gray-200 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between px-4 sm:px-8 py-4 shrink-0">
+        <h1 className="text-lg sm:text-xl font-semibold text-[#323130]">Employee Dashboard</h1>
+        <div className="flex flex-col gap-2 w-full sm:w-auto sm:flex-row sm:items-center sm:justify-end">
+          <div className="relative w-full sm:w-64">
             <input
               type="text"
               placeholder="Search assessments..."
-              className="pl-9 pr-4 py-1.5 border border-gray-400 rounded-sm w-64 text-sm focus:border-[#0078d4] focus:outline-none focus:ring-1 focus:ring-[#0078d4] placeholder:text-gray-500"
+              className="pl-9 pr-4 py-1.5 border border-gray-400 rounded-sm w-full text-sm focus:border-[#0078d4] focus:outline-none focus:ring-1 focus:ring-[#0078d4] placeholder:text-gray-500"
             />
-            <Search className="absolute left-2.5 top-2 text-gray-500" size={16} />
+            <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 text-gray-500" size={16} />
           </div>
-          <button className="p-2 text-gray-600 hover:bg-gray-100 rounded-full"><Bell size={20} /></button>
-          <button className="p-2 text-gray-600 hover:bg-gray-100 rounded-full"><Settings size={20} /></button>
+          <div className="flex items-center gap-2 sm:gap-4">
+            <button className="p-2 text-gray-600 hover:bg-gray-100 rounded-full"><Bell size={20} /></button>
+            <button className="p-2 text-gray-600 hover:bg-gray-100 rounded-full"><Settings size={20} /></button>
+          </div>
         </div>
       </div>
 
