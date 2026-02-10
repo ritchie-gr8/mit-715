@@ -265,21 +265,21 @@ const Dashboard = ({ onStartExam }: { onStartExam: (exam: Exam) => void }) => {
 
 const IntroScreen = ({ exam, onBack, onProceed }: { exam: Exam, onBack: () => void, onProceed: () => void }) => {
   return (
-    <div className="flex-1 bg-white p-8 md:p-12 flex flex-col items-center justify-center animate-fade-in">
-      <div className="max-w-3xl w-full border border-gray-200 shadow-lg bg-white rounded-sm overflow-hidden flex flex-col md:flex-row h-[500px]">
+    <div className="flex-1 bg-white p-4 sm:p-8 md:p-12 flex flex-col items-center md:justify-center animate-fade-in overflow-y-auto min-h-0 w-full">
+      <div className="max-w-3xl w-full border border-gray-200 shadow-lg bg-white rounded-sm overflow-hidden flex flex-col md:flex-row md:h-[500px] flex-1 md:flex-none min-h-0">
         {/* Left Color Panel */}
-        <div className={`${exam.imageColor} w-full md:w-1/3 p-8 text-white flex flex-col justify-between`}>
+        <div className={`${exam.imageColor} w-full md:w-1/3 p-6 md:p-8 text-white flex flex-col justify-between gap-6`}>
           <button onClick={onBack} className="text-white/80 hover:text-white flex items-center gap-2 text-sm">
              <ChevronLeft size={16} /> Back
           </button>
           <div>
             <h2 className="text-3xl font-bold mb-4">{exam.title}</h2>
-            <div className="space-y-4">
-               <div className="flex items-center gap-3 opacity-90">
+            <div className="space-y-1 md:space-y-4">
+               <div className="flex items-center gap-2 opacity-90">
                  <Clock size={20} />
                  <span className="text-lg">{exam.duration} Minutes</span>
                </div>
-               <div className="flex items-center gap-3 opacity-90">
+               <div className="flex items-center gap-2 opacity-90">
                  <LayoutGrid size={20} />
                  <span className="text-lg">{exam.questions} Questions</span>
                </div>
@@ -293,9 +293,9 @@ const IntroScreen = ({ exam, onBack, onProceed }: { exam: Exam, onBack: () => vo
         </div>
 
         {/* Right Content Panel */}
-        <div className="flex-1 p-8 md:p-10 flex flex-col bg-[#faf9f8]">
+        <div className="flex-1 p-6 md:p-10 flex flex-col bg-[#faf9f8] min-h-0">
           <h3 className="text-xl font-bold text-[#323130] mb-6 border-b border-gray-300 pb-2">Instructions</h3>
-          <div className="space-y-4 text-[#605e5c] overflow-y-auto flex-1 text-sm leading-relaxed">
+          <div className="space-y-4 text-[#605e5c] text-sm leading-relaxed flex-1 overflow-y-auto min-h-0 pr-1">
             <p>1. This assessment is designed to test your knowledge on the subject matter. Please ensure you have a stable internet connection.</p>
             <p>2. Once you start, the timer will begin. You cannot pause the timer.</p>
             <p>3. You can flag questions for review and return to them before submitting.</p>
@@ -305,16 +305,16 @@ const IntroScreen = ({ exam, onBack, onProceed }: { exam: Exam, onBack: () => vo
             </p>
           </div>
 
-          <div className="mt-8 pt-6 border-t border-gray-200 flex justify-end gap-3">
+          <div className="mt-6 md:mt-8 pt-4 md:pt-6 border-t border-gray-200 flex flex-col md:flex-row md:justify-end gap-3 flex-shrink-0">
             <button
               onClick={onBack}
-              className="px-6 py-2 border border-gray-400 text-[#323130] font-semibold hover:bg-gray-100 transition-colors"
+              className="px-6 py-2 border border-gray-400 text-[#323130] font-semibold hover:bg-gray-100 transition-colors w-full md:w-auto"
             >
               Cancel
             </button>
             <button
               onClick={onProceed}
-              className="px-6 py-2 bg-[#0078d4] text-white font-semibold shadow-sm hover:bg-[#106ebe] active:scale-95 transition-all flex items-center gap-2"
+              className="px-6 py-2 bg-[#0078d4] text-white font-semibold shadow-sm hover:bg-[#106ebe] active:scale-95 transition-all flex items-center justify-center gap-2 w-full md:w-auto"
             >
               Start Now <Play size={16} fill="white" />
             </button>
