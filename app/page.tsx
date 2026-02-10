@@ -186,7 +186,7 @@ const Dashboard = ({ onStartExam }: { onStartExam: (exam: Exam) => void }) => {
             <input
               type="text"
               placeholder="Search assessments..."
-              className="pl-9 pr-4 py-1.5 border border-gray-400 rounded-sm w-64 text-sm focus:border-[#0078d4] focus:outline-none focus:ring-1 focus:ring-[#0078d4]"
+              className="pl-9 pr-4 py-1.5 border border-gray-400 rounded-sm w-64 text-sm focus:border-[#0078d4] focus:outline-none focus:ring-1 focus:ring-[#0078d4] placeholder:text-gray-500"
             />
             <Search className="absolute left-2.5 top-2 text-gray-500" size={16} />
           </div>
